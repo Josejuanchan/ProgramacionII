@@ -10,5 +10,13 @@ public class Controladora {
         if (e.necesitaEjecucion()){
             e.ejecutarTarea();
         }
+
+	Reloj r = new Reloj();
+        
+        if(r.necesitaEjecucion()){
+            r.ejecutarTarea();
+            r.leerHora();
+        } 
+	    
 }
 }
