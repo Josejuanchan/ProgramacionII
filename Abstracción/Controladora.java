@@ -1,22 +1,9 @@
 import java.util.Scanner;
 
 public class Controladora {
-
-    public static void main(String[] args){
-        Ejecutor e = new Ejecutor("calc",1);
-	Scanner	leer = new Scanner(System.in);
-	System.out.println("Escribe un commando para ejecutar");
-	e.comando = leer.next();
-        if (e.necesitaEjecucion()){
-            e.ejecutarTarea();
-        }
-
-	Reloj r = new Reloj();
-        
-        if(r.necesitaEjecucion()){
-            r.ejecutarTarea();
-            r.leerHora();
-        } 
-	    
-}
+	
+	public static void main(String[]args){
+	new Thread(new Reloj()).start();
+        new Thread(new Ejecutor("calc",0)).start();
+    }
 }
