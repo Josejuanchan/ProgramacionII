@@ -32,5 +32,10 @@ public class Ejecutor extends TareaPeriodica{
             }
             return -1;
 }
-		
+	public void run(){
+            if(this.necesitaEjecucion()){
+                this.ejecutarTarea();
+            }
+        }
+	
 }
