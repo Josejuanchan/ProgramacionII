@@ -19,7 +19,7 @@ public class Reloj extends TareaPeriodica {
             Calendar ahora = new GregorianCalendar();
             return ahora.before(cal);
 }
-        public	int	ejecutarTarea()	{
+        public int ejecutarTarea() {
             Calendar c = new GregorianCalendar();
             System.out.println(String.format("%d%d%d", c.get(Calendar.HOUR) ,c.get(Calendar.MINUTE), c.get(Calendar.SECOND)));
             return 0;
