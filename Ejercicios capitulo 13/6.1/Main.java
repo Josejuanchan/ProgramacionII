@@ -8,5 +8,8 @@ public class Main
 	    
 	    System.out.println(car1.equals(car2));
 	    System.out.println(car1.equals(car3));
+
+	    System.out.println("¿Es del mismo color los carros 1 y 2? " + car1.sameColorAs(car2));
+	    System.out.println("¿Es del mismo color los carros 1 y 3? " + car1.sameColorAs(car3));
 	}
 }
