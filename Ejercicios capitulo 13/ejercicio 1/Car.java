@@ -17,4 +17,9 @@ public class Car{
         color.equals(otherCar.color);
         
     } // end equals
+    public boolean sameColorAs(Car otherCar){
+
+        return otherCar != null && color.equals(otherCar.color);
+    } // end sameColorAs
+
 } // end class Car
