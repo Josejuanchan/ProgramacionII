@@ -1,5 +1,6 @@
 package gui;
 
+import graphics.Circulo;
 import graphics.Cuadrado;
 import graphics.FiguraGrafica;
 import graphics.Rectangulo;
@@ -36,6 +37,7 @@ public class PoliVisor extends javax.swing.JFrame {
         botonCuadrado = new javax.swing.JButton();
         botonRectangulo = new javax.swing.JButton();
         botonTriangulo = new javax.swing.JButton();
+        botonCirculo = new javax.swing.JButton();
         panelControl = new javax.swing.JPanel();
         botonArriba = new javax.swing.JButton();
         botonColor = new javax.swing.JButton();
@@ -71,6 +73,13 @@ public class PoliVisor extends javax.swing.JFrame {
             }
         });
 
+        botonCirculo.setText("Un circulo!");
+        botonCirculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCirculoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelTipoLayout = new javax.swing.GroupLayout(panelTipo);
         panelTipo.setLayout(panelTipoLayout);
         panelTipoLayout.setHorizontalGroup(
@@ -78,6 +87,7 @@ public class PoliVisor extends javax.swing.JFrame {
             .addGroup(panelTipoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonRectangulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -92,7 +102,9 @@ public class PoliVisor extends javax.swing.JFrame {
                 .addComponent(botonRectangulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonTriangulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         panelControl.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -225,7 +237,7 @@ public class PoliVisor extends javax.swing.JFrame {
                         .addComponent(panelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -283,6 +295,12 @@ public class PoliVisor extends javax.swing.JFrame {
         enableControls();
     }                                               
 
+    private void botonCirculoActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        figura = new Circulo(50,50,30);
+        figura.dibujar(getPanelGraphics());
+        enableControls();
+    }                                            
+
     /**
      * @param args the command line arguments
      */
@@ -337,6 +355,7 @@ public class PoliVisor extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton botonAbajo;
     private javax.swing.JButton botonArriba;
+    private javax.swing.JButton botonCirculo;
     private javax.swing.JButton botonColor;
     private javax.swing.JButton botonCuadrado;
     private javax.swing.JButton botonDerecha;
