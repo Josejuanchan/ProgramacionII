@@ -1,4 +1,4 @@
-public class Estudiante {
+class Estudiante {
     private String nombre;
     private int edad;
 

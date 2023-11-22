@@ -1,4 +1,4 @@
-public class Biblioteca {
+class Biblioteca {
     private String nombre;
     private Libro[] libros;
     private int cantidadLibros = 0;
