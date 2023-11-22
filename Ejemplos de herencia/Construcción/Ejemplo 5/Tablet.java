@@ -1,4 +1,4 @@
-class Tablet {
+public class Tablet {
     void navegarInternet() {
         System.out.println("Navegando por Internet en la tablet.");
     }

@@ -1,4 +1,4 @@
-class Celular extends Tablet {
+public class Celular extends Tablet {
     void realizarLlamada() {
         System.out.println("Realizando una llamada desde el celular.");
     }
