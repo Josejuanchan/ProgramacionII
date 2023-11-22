@@ -1,4 +1,4 @@
-class Grupo {
+public class Grupo {
     private int grado;
     private char grupo;
     private Estudiante[] estudiantes;
