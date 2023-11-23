@@ -21,11 +21,11 @@ public class Controladora{
                 escritor.println(generador.imprimirCierre());
                 lector.close();
                 escritor.close(); 
-				catch (FileNotFoundException e){
+			}catch (FileNotFoundException e){
 			}*/
 				
 				
-			try{
+			/*try{
 			DataOutputStream escritor = new DataOutputStream (new FileOutputStream("hola.bin"));
 			escritor.writeInt(33465);
 			escritor.writeChar('a');
@@ -33,13 +33,25 @@ public class Controladora{
 			escritor.writeShort(10);
 			escritor.close();
 			DataInputStream	lector = new DataInputStream (new FileInputStream("hola.bin"));
-			System.out.println(lector.readInt());
-			System.out.println(lector.readChar());
 			System.out.println(lector.readChar());
 			System.out.println(lector.readShort());
+			System.out.println(lector.readInt());
+			System.out.println(lector.readChar());
 			escritor.close();
 			}catch (IOException e) {
 			
+			} */
+			
+			try{
+				ObjectInputStream lector = new ObjectInputStream (new FileInputStream("web.obj"));
+				PrintWriter	escritor = new PrintWriter("main.html");
+				WebMaker pagina = (WebMaker)(lector.readObject());
+				escritor.print(pagina.printPage());
+				lector.close();
+				escritor.close();
+			} catch (FileNotFoundException e){
+			} catch (IOException e){
+			} catch (ClassNotFoundException e){
 			}
-		} 	
 	}
+}
